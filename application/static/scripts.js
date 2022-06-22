@@ -141,16 +141,10 @@ function add_entry() {
     get_ppl();
 }
 
-function login() {
-
-    console.log("Hello I am here");
-
-}
-
 
 function make_changes() {
-    var name = $("#update_name").val();
-    var tel = $("#update_tel").val();
+    var name = $("#update_name").val().trim();
+    var tel = $("#update_tel").val().trim();
     var idx = $("#update_idx").val();
     var uniq_Id = entry_list[idx].id;
     if (!is_Input_Error(name, tel)) {
