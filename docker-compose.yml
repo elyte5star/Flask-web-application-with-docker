@@ -1,0 +1,43 @@
+version: '3.8'
+networks:
+  my_net:
+services:
+  web:
+    container_name: web_app
+    image: backend_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+        - my_net
+    ports:
+      - "3000:3000"
+    depends_on:
+      - my_db
+    env_file:
+      - ./environment/app.env
+
+  my_db:
+    image: mongo:latest
+    container_name: my_db
+    restart: always
+    expose:
+    - 27017
+    networks:
+      - my_net
+    volumes:
+      - ./demo:/home/demo
+    
+  
+   
+  
+      
+  
+
+  
+    
+
+    
+    
+
+    

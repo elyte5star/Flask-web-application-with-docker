@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>SIMPLE SITE</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <script src="/static/scripts.js"></script>
+</head>
+
+<body onload="get_ppl();">
+  <header>
+    <div id="logo">
+      <h1>Simple Site</h1>
+    </div>
+  </header>
+  <main>
+    <img src="static/images/bg.jpg" alt="Robot" class="banner" />
+    <h1 id="info">List of workers in the office</h1>
+    <!-- Update entry panel -->
+    <div id="update_entry" style="display: none">
+      <h2>Update entry</h2>
+      <div class="close">
+        <a href="javascript:void(0)" onclick="hide_update_entry('update_entry');"><i class="fa fa-remove"></i></a>
+      </div>
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td>
+            <input type="text" name="update_name" id="update_name" size="15" />
+          </td>
+        </tr>
+        <tr>
+          <td>Telephone:</td>
+          <td>
+            <input type="text" name="update_tel" id="update_tel" size="15" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" id="update" value="Update" onclick="make_changes();" style="width: 100%" />
+          </td>
+          <td>
+            <input type="hidden" name="update_idx" id="update_idx" value="" />
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- the container to add the list of workers to -->
+    <div id="list"></div>
+
+    <!-- the button to add a person -->
+    <input class="form-btn" onclick="show_add_entry('add_entry');" type="button" id="add_p" value="Add a person" />
+    <div id="add_entry" style="display: none">
+      <div class="close">
+        <a href="javascript:void(0)" onclick="hide_add_entry('add_entry');"><i class="fa fa-remove"></i></a>
+      </div>
+      <h2>Add person</h2>
+
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td>
+            <input type="text" name="add_name" id="add_name" size="15"/>
+          </td>
+        </tr>
+        <tr>
+          <td>Telephone:</td>
+          <td>
+            <input type="text" name="add_tel" id="add_tel" size="15" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input id="b1" type="button" value="Add person" onclick="add_entry();" style="width: 100%" />
+          </td>
+          <td>
+            <input id="b2" type="button" value="Cancel" onclick="hide_add_entry('add_entry');" style="width: 100%" />
+          </td>
+        </tr>
+      </table>
+    </div>
+    </div>
+  </main>
+  <footer>
+    <div class="con">
+      <span class="strong">Telephone:</span> | +4740978057 |
+      <a href="#">checkuti@gmail.com</a>
+    </div>
+  </footer>
+</body>
+
+</html>
