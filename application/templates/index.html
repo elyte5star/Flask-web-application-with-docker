@@ -10,6 +10,7 @@
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
   <script src="/static/scripts.js"></script>
+  
 </head>
 
 <body onload="get_ppl();">
@@ -20,7 +21,8 @@
   </header>
   <main>
     <img src="static/images/bg.jpg" alt="Robot" class="banner" />
-    <h1 id="info">List of workers in the office</h1>
+    <h1 id="info">List of workers in the office<span id="user_id">Welcome</span></h1>
+    
     <!-- Update entry panel -->
     <div id="update_entry" style="display: none">
       <h2>Update entry</h2>
@@ -50,11 +52,14 @@
         </tr>
       </table>
     </div>
+
     <!-- the container to add the list of workers to -->
     <div id="list"></div>
 
     <!-- the button to add a person -->
     <input class="form-btn" onclick="show_add_entry('add_entry');" type="button" id="add_p" value="Add a person" />
+    <a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"style="font-size:60px;"></i>
+
     <div id="add_entry" style="display: none">
       <div class="close">
         <a href="javascript:void(0)" onclick="hide_add_entry('add_entry');"><i class="fa fa-remove"></i></a>

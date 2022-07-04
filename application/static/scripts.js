@@ -114,6 +114,17 @@ async function delete_Entry(idx) {
     }
 }
 
+function login(){
+    var userName = document.getElementById("username").value;
+    var passWord = document.getElementById("pass").value;
+    var obj ={"username":userName,"password":passWord};
+    postData("./auth", obj).then((result) => {
+        window.open(result.url , "_self" );
+        console.log(result.id);
+        $("#user_id").val(result.id);
+    });
+      
+}
 
 function update_Entry(idx) {
     $("#update_name").val(entry_list[idx].name);

@@ -14,6 +14,11 @@ html {
     background-color: #3299bb;
 }
 
+#user_id{
+    float: right;
+    color:black;
+}
+
 h1 {
     font-family: Montserrat, sans-serif;
 }
@@ -60,6 +65,11 @@ img.banner {
     background-color: yellowgreen;
 }
 
+.fa-sign-out:hover {
+    background-color: red;
+}
+
+
 footer {
     width: 100%;
     margin: 0 auto;
@@ -92,7 +102,7 @@ footer .con {
     background-color: red;
 }
 
-#add_p {
+#add_p{
     width: 99.7%;
     border-width: 1px 5px 1px 5px;
     border-style: solid;
