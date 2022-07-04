@@ -1,2 +1,1 @@
-# Docker_app
- Flask web application with docker-compose
+# Flask web application with docker
