@@ -28,17 +28,4 @@ services:
     volumes:
       - ./demo:/home/demo
       - ./db_data:/data/db
-    
   
-   
-  
-      
-  
-
-  
-    
-
-    
-    
-
-    
