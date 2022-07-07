@@ -27,6 +27,7 @@ services:
       - my_net
     volumes:
       - ./demo:/home/demo
+      - ./db_data:/data/db
     
   
    

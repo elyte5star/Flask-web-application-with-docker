@@ -40,28 +40,22 @@ class DB_int():
     @staticmethod
     def db_int():
         try:
-            print("Attempting to connect to database server...")   
-            client = MongoClient(mongoHost,
-                     username=mongoUsername,
-                     password=mongoPassword,
-                     authSource=mongoDB,
-                     authMechanism='SCRAM-SHA-256')
-
-            print("[+] Database connected!")
-        except:
-            print("[+] Database connection error!")
             
-        db = client['example']
+            print("Attempting to connect to database server....")
+            print("Authentication parameters: ",{"MONGODB_HOST ": mongoHost,"MONGODB_AUTH_USER ":mongoUsername,"MONGODB_AUTH_PWD" : mongoPassword,"MONGODB_DATABASE": mongoDB}) 
+
+            client = MongoClient(mongoHost,username=mongoUsername,password=mongoPassword,authSource=mongoDB)
+            
+            print("[+] Database connected!")
+        
+        except errors.ServerSelectionTimeoutError as e: 
+            print('Could not connect to MongoDB: {}'.format(e))
+            
+        db = client[mongoDB]
 
         return db
 
 db = DB_int().db_int()
-
-
-
-def before_request():
-    if not session.get("user") and request.endpoint != 'login':
-        return redirect(url_for('login'))
 
 
 @app.route("/auth",methods=['GET', 'POST'])
