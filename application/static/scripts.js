@@ -119,11 +119,21 @@ function login(){
     var passWord = document.getElementById("pass").value;
     var obj ={"username":userName,"password":passWord};
     postData("./auth", obj).then((result) => {
+
+        if (result.state){
+
         window.open(result.url , "_self" );
-        console.log(result.id);
-        $("#user_id").val(result.id);
+        
+        $("#user_id").html(result.id);
+
+        }else{
+
+            $("#info2").html("Invalid Credentials. Please log in again.");
+
+        }
+
     });
-      
+
 }
 
 function update_Entry(idx) {
